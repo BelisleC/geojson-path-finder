@@ -1,15 +1,10 @@
 'use strict';
 
-var topology = require('./topology'),
-    compactor = require('./compactor'),
-    distance = require('@turf/distance'),
-    roundCoord = require('./round-coord'),
-    point = require('turf-point');
 
-module.exports = function preprocess(graph, options) {
+function preprocess(graph, options) {
     options = options || {};
     var weightFn = options.weightFn || function defaultWeightFn(a, b) {
-            return distance(point(a), point(b));
+            return turf.distance(turf.point(a), turf.point(b));
         },
         topo;
 
@@ -65,7 +60,7 @@ module.exports = function preprocess(graph, options) {
         return g;
     }, {edgeData: {}, vertices: {}});
 
-    var compact = compactor.compactGraph(graph.vertices, topo.vertices, graph.edgeData, options);
+    var compact = compactGraph(graph.vertices, topo.vertices, graph.edgeData, options);
 
     return {
         vertices: graph.vertices,

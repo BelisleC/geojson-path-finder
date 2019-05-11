@@ -1,10 +1,5 @@
 'use strict';
 
-module.exports = {
-    compactNode: compactNode,
-    compactGraph: compactGraph
-};
-
 function findNextEnd(prev, v, vertices, ends, vertexCoords, edgeData, trackIncoming, options) {
     var weight = vertices[prev][v],
         reverseWeight = vertices[v][prev],
@@ -96,7 +91,7 @@ function compactGraph(vertices, vertexCoords, edgeData, options) {
         } else {
             remove = false;
         }
-
+        
         if (!remove) {
             es[k] = vertex;
         }

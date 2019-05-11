@@ -84,3 +84,17 @@ that are associated with this feature, and should return either:
   `backward` the cost of going from `b` to `a`; setting either
   to `0`, `null` or `undefined` will prevent taking that direction,
   the segment will be a oneway.
+
+IMPORTANT!!! "Browser branch"
+=============================
+
+- Nick Whitelegg
+
+This "browser branch" has been created from a fork of the final 2018 commit
+of geojson-path-finder (github.com/nickw1/geojson-path-finder). The code has 
+been converted from node.js style
+JavaScript to "pure browser" style. This was necessary because attempts to
+use browserify to combine GeoJSON Path Finder and Pannellum (needed for
+my OpenTrailView project) caused hard-to-diagnose errors so I figured the
+best solution (for now) was to modify GeoJSON Path Finder.
+
